@@ -1,0 +1,52 @@
+
+java installation
+
+http://www.anotherlan.com/install-oracle-java-on-your-ubuntu-12-04-with-minimal-fuss
+
+example:
+JDK 1.7u67 >>>>>>>>>>>
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u67-b01/jdk-7u67-linux-x64.tar.gz
+
+tar xzvf jdk-7u67-linux-x64.tar.gz
+---------------------------------------------------------------------------------------------------------------------------
+
+alfresco concept > how to install and configure
+
+http://docs.alfresco.com/5.1/concepts/install-singleinstance.html
+
+...................................................
+
+alfresco5.1 installation from bin file >>>>>>>
+wget https://sourceforge.net/projects/alfresco/files/alfresco-community-installer-201605-linux-x64.bin
+chmod 777 alfresco-community-installer-201605-linux-x64.bin
+./alfresco-community-installer-201605-linux-x64.bin
+
+..................................................
+
+auto installation needed for dockerfile
+
+links: 
+http://docs.alfresco.com/5.1/concepts/silent-alf-install.html
+http://richard.esplins.org/siwi/2011/01/12/automating-new-alfresco-installers/
+----------------------------------------------------------------------------------------------------------------------------
+
+LINKS:::::::::::
+ALFRESCO CONFIGURATION
+
+http://docs.alfresco.com/4.0/concepts/ch-configuration.html
+http://fcorti.com/2014/10/13/how-to-install-alfresco-5-0-ubuntu-14-04-lts/
+http://www.linuxmissive.com/2015/10/install-alfresco-on-ubuntu-1404-lts.html
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+git 
+
+https://github.com/akhilrajmailbox/alfresco-5.1.git
+
+three branches
+1) files
+2) master
+3) alfresco
+
+-----------------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,34 @@
+@vikash/sanath is this available on alfresco 5.x https://wiki.alfresco.com/wiki/Multi-Tenancy
+[4:04:34 PM] ajit singh: this is document of alfresco 4.x
+[4:04:42 PM] ajit singh: we need same thing on 5.x
+[4:04:56 PM] ajit singh: http://docs.alfresco.com/4.1/concepts/auth-passthru-domainprops.html
+[4:07:46 PM] ajit singh: ok I think it works in 5.0.a , 5.0.b have issues
+[4:08:02 PM] ajit singh: below are some links and videos
+[4:08:03 PM] ajit singh: http://docs.alfresco.com/5.0/concepts/mt-intro.html
+[4:08:08 PM] ajit singh: http://docs.alfresco.com/5.0/concepts/mt-implement.html
+[4:08:26 PM] ajit singh: http://www.giuseppeurso.eu/en/alfresco-tips-and-tricks-7-multi-tenancy/
+[4:09:14 PM] ajit singh: http://ecmarchitect.com/archives/2014/11/06/3962
+[4:09:36 PM] ajit singh: http://blog.tsgrp.com/2012/05/10/experiences-with-alfresco-multi-tenancy/
+[4:10:37 PM] ajit singh: https://www.youtube.com/watch?v=Xsf79lD0vf4
+[4:11:49 PM] ajit singh: https://www.youtube.com/watch?v=eo8lu6eLVpw
+[4:14:28 PM] ajit singh: https://www.youtube.com/watch?v=C6kWAFDWOao
+[4:15:07 PM] ajit singh: https://www.youtube.com/watch?v=TAE9UjC0xxc
+[4:15:30 PM] ajit singh: https://www.youtube.com/watch?v=tC2emd5d8S8
+[4:15:50 PM] ajit singh: https://www.youtube.com/watch?v=i0K2Y_6JH0A
+[4:15:58 PM] ajit singh: https://www.youtube.com/watch?v=A-r9bE1O4j0
+[4:16:46 PM] ajit singh: https://www.youtube.com/watch?v=Cnu_XeEbBBM
+[4:17:20 PM] ajit singh: https://www.youtube.com/watch?v=kUSV4bClrF4
+[4:17:29 PM] ajit singh: https://www.youtube.com/watch?v=HZueN5DKn74
+[4:17:56 PM] ajit singh: https://www.youtube.com/watch?v=wP0ElWSKUME
+[4:18:06 PM] ajit singh: https://www.youtube.com/watch?v=2IZlazFu3gU
+[4:19:16 PM] ajit singh: below are other importants things we should know about alfresco admin
+[4:19:17 PM] ajit singh: http://docs.alfresco.com/community5.0/concepts/FSTR-intro.html
+[4:19:22 PM] ajit singh: http://docs.alfresco.com/community5.0/concepts/Bulk-Import-Tool.html
+[4:19:30 PM] ajit singh: http://docs.alfresco.com/community5.0/concepts/manage-cs-home.html
+[4:19:35 PM] ajit singh: http://docs.alfresco.com/community5.0/concepts/ch-backup-restore.html
+[4:19:41 PM] ajit singh: http://docs.alfresco.com/community5.0/concepts/admintools-replication-config.html
+[4:19:47 PM] ajit singh: http://docs.alfresco.com/community5.0/concepts/audit-intro.html
+[4:21:07 PM] ajit singh: https://www.youtube.com/watch?v=A-r9bE1O4j0
+[4:21:12 PM] ajit singh: https://www.youtube.com/watch?v=Cnu_XeEbBBM
+[4:21:17 PM] ajit singh: https://www.youtube.com/watch?v=HZueN5DKn74
+
