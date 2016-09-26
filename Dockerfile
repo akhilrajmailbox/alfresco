@@ -2,7 +2,7 @@ from ubuntu:14.04
 maintainer bizruntime
 run sudo apt-get update && apt-get -y upgrade
 run apt-get purge openjdk-*
-run apt-get install -y wget git tar unzip nano
+run apt-get install -y wget git tar unzip nano nfs-common
 run mkdir /opt/alfresco
 
 
@@ -18,7 +18,6 @@ run touch /etc/profile.d/java.sh \
 
 #ImageMagick
 run apt-get -y install ghostscript imagemagick
-
 
 #FFMPeg
 run apt-get -y install  software-properties-common \
@@ -43,15 +42,52 @@ run apt-get -y install libreoffice
 workdir /opt/alfresco
 run wget https://sourceforge.net/projects/alfresco/files/alfresco-community-installer-201605-linux-x64.bin
 run chmod 777 alfresco-community-installer-201605-linux-x64.bin
-
-
 workdir /tmp
+
+
+
 run git clone -b alfresco https://github.com/akhilrajmailbox/alfresco-5.1.git
 workdir /opt/alfresco
 run cp /tmp/alfresco-5.1/auto-file /opt/alfresco
 run ./alfresco-community-installer-201605-linux-x64.bin --optionfile auto-file
 run cp /tmp/alfresco-5.1/mysql-connector-java-5.1.38-bin.jar /opt/alfresco-community/tomcat/lib
+
+
+
 workdir /opt/alfresco-community
 
-expose 8080
-entrypoint /opt/alfresco-community/alfresco.sh start && tail -f /opt/alfresco-community/tomcat/logs/catalina.out && bash
+#########################################################################################
+###########################    clustering-conf    #######################################
+#########################################################################################
+
+#nfs-configuration and mounting && make sure that nfs server export files to this machine
+#change root directory as this mount point in option-file which is used while automatic-alfresco-installation
+run mkdir -p /opt/alfresco-community/nfs || pwd
+run cat /tmp/alfresco-5.1/clustering-file >> /opt/alfresco-community/tomcat/shared/classes/alfresco-global.properties
+run sed -i "s|dir.root=/opt/alfresco-community/alf_data|dir.root=/opt/alfresco-community/nfs/alf_data|g" /opt/alfresco-community/tomcat/shared/classes/alfresco-global.properties
+
+
+#########################################################################################
+###########################    multi-tenet-conf   #######################################
+#########################################################################################
+
+#multi-tenet directory also need to be mount with nfs
+
+run mkdir /opt/alfresco-community/t1
+run mkdir /opt/alfresco-community/t2
+
+expose 8080 7800 2049
+
+
+#use --privileged for running the docker, if not then mount option will not work and lead to error
+#wait for first container start for for run second container to run.
+
+entrypoint mount -t nfs 192.168.1.234:/opt/alfresco-community/nfs /opt/alfresco-community/nfs \
+	   && mount -t nfs 192.168.1.234:/opt/alfresco-community/t1 /opt/alfresco-community/t1 \
+	   && mount -t nfs 192.168.1.234:/opt/alfresco-community/t2 /opt/alfresco-community/t2 \
+	   && ls /opt/alfresco-community/nfs/alf_data \
+	   && /opt/alfresco-community/alfresco.sh start \
+           && tail -f /opt/alfresco-community/tomcat/logs/catalina.out && bash \
+	   || cp -r /opt/alfresco-community/alf_data /opt/alfresco-community/nfs/ \
+	   && /opt/alfresco-community/alfresco.sh start \
+	   && tail -f /opt/alfresco-community/tomcat/logs/catalina.out && bash
